@@ -6,16 +6,13 @@
 # We make no guarantees that this code is fit for any purpose. 
 # Visit http://www.pragmaticprogrammer.com/titles/nrtest2 for more book information.
 #---
-class CreateTasks < ActiveRecord::Migration
+class CreateProjects < ActiveRecord::Migration
   def change
-    create_table :tasks do |t|
-      t.references :project, index: true
-      t.string :title
-      t.integer :size
-      t.datetime :completed_at
+    create_table :projects do |t|
+      t.string :name
+      t.date :due_date
 
       t.timestamps
     end
   end
 end
-
